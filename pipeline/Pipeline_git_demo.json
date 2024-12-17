@@ -1,0 +1,19 @@
+{
+	"name": "Pipeline_git_demo",
+	"properties": {
+		"activities": [
+			{
+				"name": "Wait1",
+				"type": "Wait",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 1
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2024-12-17T03:04:05Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

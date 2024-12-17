@@ -1,0 +1,9 @@
+{
+	"name": "git-integration-demo",
+	"location": "australiaeast",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c16648ed-667a-4bfe-ba6e-370f097cd572",
+		"tenantId": "84104478-caaf-4c13-8419-9cc452775829"
+	}
+}

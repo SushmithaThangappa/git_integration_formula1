@@ -1,0 +1,29 @@
+{
+	"name": "trigger_formula1_project",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipeline": {
+			"pipelineReference": {
+				"referenceName": "Pipeline_git_demo",
+				"type": "PipelineReference"
+			},
+			"parameters": {
+				"window_end_date": "@trigger().outputs.windowEndTime"
+			}
+		},
+		"type": "TumblingWindowTrigger",
+		"typeProperties": {
+			"frequency": "Hour",
+			"interval": 168,
+			"startTime": "2021-03-14T20:07:00Z",
+			"endTime": "2021-04-25T18:07:00Z",
+			"delay": "00:00:00",
+			"maxConcurrency": 1,
+			"retryPolicy": {
+				"intervalInSeconds": 30
+			},
+			"dependsOn": []
+		}
+	}
+}

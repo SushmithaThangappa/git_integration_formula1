@@ -131,6 +131,36 @@
 					"referenceName": "ls_Forumula1_dbricks",
 					"type": "LinkedServiceReference"
 				}
+			},
+			{
+				"name": "Get Metadata",
+				"description": "To check if the folder exists in raw folder. Only if a folder exists in raw folder, the files will be ingested in processed folder",
+				"type": "GetMetadata",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "Json1",
+						"type": "DatasetReference"
+					},
+					"fieldList": [
+						"exists"
+					],
+					"storeSettings": {
+						"type": "AzureBlobFSReadSettings",
+						"enablePartitionDiscovery": false
+					},
+					"formatSettings": {
+						"type": "JsonReadSettings"
+					}
+				}
 			}
 		],
 		"parameters": {

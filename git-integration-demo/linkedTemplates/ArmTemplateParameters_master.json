@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "git-integration-demo"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"ls_Forumula1_dbricks_accessToken": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://saformula1dbricks.dfs.core.windows.net/"
+		},
+		"ls_Forumula1_dbricks_properties_typeProperties_existingClusterId": {
+			"value": "1201-180208-1jzu8zrf"
+		},
+		"trigger_formula1_project_properties_pipeline_parameters_window_end_date": {
+			"value": "@trigger().outputs.windowEndTime"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

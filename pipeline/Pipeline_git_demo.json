@@ -3,24 +3,141 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Wait1",
-				"type": "Wait",
+				"name": "circuits_file_ingestion",
+				"type": "DatabricksNotebook",
 				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
 				"userProperties": [],
 				"typeProperties": {
-					"waitTimeInSeconds": 1
+					"notebookPath": "/Users/amarnadh.reddy@outlook.com/Formula1/Data Ingestion/1.ingest circuit file",
+					"baseParameters": {
+						"folder_date": {
+							"value": "@formatDateTime(pipeline().parameters.window_end_date,'yyyy-MM-dd')",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_Forumula1_dbricks",
+					"type": "LinkedServiceReference"
 				}
 			},
 			{
-				"name": "Wait2",
-				"type": "Wait",
+				"name": "ingest races file",
+				"type": "DatabricksNotebook",
 				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
 				"userProperties": [],
 				"typeProperties": {
-					"waitTimeInSeconds": 1
+					"notebookPath": "/Users/amarnadh.reddy@outlook.com/Formula1/Data Ingestion/2.Ingest Races file",
+					"baseParameters": {
+						"folder_date": {
+							"value": "@formatDateTime(pipeline().parameters.window_end_date,'yyyy-MM-dd')",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_Forumula1_dbricks",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "ingest results file",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/amarnadh.reddy@outlook.com/Formula1/Data Ingestion/5.ingest results file-json",
+					"baseParameters": {
+						"folder_date": {
+							"value": "@formatDateTime(pipeline().parameters.window_end_date,'yyyy-MM-dd')",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_Forumula1_dbricks",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "ingest driver file",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/amarnadh.reddy@outlook.com/Formula1/Data Ingestion/4.ingest driver file-nested json",
+					"baseParameters": {
+						"folder_date": {
+							"value": "@formatDateTime(pipeline().parameters.window_end_date,'yyyy-MM-dd')",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_Forumula1_dbricks",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "ingest constructors file",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/amarnadh.reddy@outlook.com/Formula1/Data Ingestion/3.Ingest Constructor-json file",
+					"baseParameters": {
+						"folder_date": {
+							"value": "@formatDateTime(pipeline().parameters.window_end_date,'yyyy-MM-dd')",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_Forumula1_dbricks",
+					"type": "LinkedServiceReference"
 				}
 			}
 		],
+		"parameters": {
+			"window_end_date": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"lastPublishTime": "2024-12-17T03:04:05Z"
 	},

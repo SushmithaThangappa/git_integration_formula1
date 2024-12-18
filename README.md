@@ -1,7 +1,8 @@
+**Formula 1 Analytics Pipeline Project**
+
 **Project Description**
 
-This project implements an end-to-end data engineering solution for analyzing and reporting on Formula 1 motor racing data using Azure Databricks and Azure Data Lake. The solution demonstrates core principles of cloud data engineering, focusing on secure data access, automation, and visualization.
-
+This project implements an end-to-end data engineering solution for analyzing and reporting on Formula 1 motor racing data using Azure Databricks and Azure Data Lake. The solution demonstrates core principles of cloud data engineering, focusing on secure data access, automation, dynamic parameterization, and visualization
 **Key Features**
 
 **1. Secure and Simplified Data Access**
@@ -12,13 +13,15 @@ Integrated Azure Key Vault for securely storing credentials, ensuring sensitive 
 
 Eliminated the need for long URLs by leveraging secrets from Key Vault for streamlined code.
 
-**2. Automated Pipeline Execution**
+**2. Automated and Dynamic Pipeline Execution**
 
 Designed and implemented a tumbling window trigger to automate the execution of Databricks notebooks.
 
 Automated the ingestion of race data from the raw layer to the processed layer in the Azure Data Lake.
 
 Built robust mechanisms to handle missing files gracefully, ensuring pipeline reliability and data integrity.
+
+Passed dynamic parameters in Azure Data Factory (ADF) to fetch data dynamically from storage containers, improving reusability and flexibility of the pipelines.
 
 **3. Transformation and Reporting**
 

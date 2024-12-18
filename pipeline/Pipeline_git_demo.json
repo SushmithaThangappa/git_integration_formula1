@@ -18,7 +18,13 @@
 				"typeProperties": {
 					"dataset": {
 						"referenceName": "Json1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"window_date": {
+								"value": "@formatDateTime(pipeline().parameters.window_end_date,'yyyy-MM-dd')",
+								"type": "Expression"
+							}
+						}
 					},
 					"fieldList": [
 						"exists"

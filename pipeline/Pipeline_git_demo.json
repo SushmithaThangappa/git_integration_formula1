@@ -182,6 +182,33 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "transformation_and_race_analytics",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "If folder exists in raw folder",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/amarnadh.reddy@outlook.com/Formula1/DEMO/race_analytics"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_Forumula1_dbricks",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"parameters": {
